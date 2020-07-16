@@ -40,5 +40,5 @@ docker run --rm --volumes-from pluralsight-getting-started-with-jenkins-2_jenkin
 Place the tar file created by the backup into the repositories root directory and run the following command:
 
 ```bash
-docker run --rm --volumes-from pluralsight-getting-started-with-jenkins-2_jenkins_1 -v $(pwd):/backup ubuntu bash -c "cd /var/jenkins_home && tar xvf /backup/jenkins_backup.tar --strip 1"
+docker run --rm -v pluralsight-getting-started-with-jenkins-2_jenkins_home:/var/jenkins_home -v $(pwd):/backup ubuntu bash -c "cd /var && tar xvf /backup/jenkins_backup.tar --strip 1"
 ```
